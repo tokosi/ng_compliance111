@@ -1,0 +1,166 @@
+{%- set s = ng_payslip(doc) -%}
+{%- set c = s.company -%}
+<style>
+	.ngps { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; color: #2b2622; font-size: 9.5pt; line-height: 1.35; }
+	.ngps table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+	.ngps td, .ngps th { padding: 0; vertical-align: top; }
+	.ngps .muted { color: #8a7d74; }
+	.ngps .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+	.ngps .gap { width: 4%; }
+
+	/* header */
+	.ngps .logo { width: 62px; height: 62px; }
+	.ngps .co-name { font-size: 13pt; font-weight: 700; letter-spacing: .02em; color: #8b4a35; margin: 2px 0 3px; }
+	.ngps .co-meta { font-size: 8.5pt; color: #8a7d74; }
+	.ngps .eyebrow { font-size: 7.5pt; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #8b4a35; }
+	.ngps .period { font-size: 16pt; font-weight: 700; margin: 2px 0; }
+	.ngps .paid { display: inline-block; font-size: 8pt; color: #0f7a44; background: #e8f5ee; border-radius: 10px; padding: 2px 9px; }
+
+	.ngps .stripe { height: 4px; margin: 14px 0 16px; background: #8b4a35; border-radius: 2px; }
+	.ngps .stripe span { display: block; float: right; height: 4px; width: 70px; background: #e9be4a; border-radius: 0 2px 2px 0; }
+	.ngps .stripe i { display: block; float: right; height: 4px; width: 70px; background: #0f9a52; }
+
+	/* employee card */
+	.ngps .card { background: #fbf7f2; border: 1px solid #efe5dc; border-radius: 8px; padding: 10px 14px; }
+	.ngps .kv td { padding: 3px 0; border-bottom: 1px solid #f0e7df; }
+	.ngps .kv tr:last-child td { border-bottom: 0; }
+	.ngps .kv .k { color: #8a7d74; width: 42%; }
+	.ngps .kv .v { font-weight: 600; }
+
+	/* earnings / deductions */
+	.ngps .sec { margin-top: 16px; }
+	.ngps .box { border: 1px solid #efe5dc; border-radius: 8px; padding: 10px 14px 8px; }
+	.ngps .box-title td { font-size: 7.5pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8b4a35; padding-bottom: 6px; }
+	.ngps .line td { padding: 4px 0; border-bottom: 1px solid #f3ece6; }
+	.ngps .line.zero td { color: #b3a79e; }
+	.ngps .total td { padding-top: 7px; border-top: 1.5px solid #2b2622; font-weight: 700; }
+
+	/* net pay */
+	.ngps .net { margin-top: 16px; background: #8b4a35; color: #fff; border-radius: 8px; padding: 12px 16px; }
+	.ngps .net .lbl { font-size: 7.5pt; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #f3d98f; }
+	.ngps .net .sub { font-size: 8pt; color: #ead6cd; margin-top: 3px; }
+	.ngps .net .amt { font-size: 20pt; font-weight: 700; text-align: right; white-space: nowrap; }
+
+	/* bottom notes */
+	.ngps .note-title td { font-size: 7.5pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8a7d74; padding-bottom: 5px; }
+	.ngps .note td { padding: 3px 0; color: #5d534d; }
+	.ngps .chip { display: inline-block; font-size: 7pt; color: #8b4a35; border: 1px solid #e6d3c8; border-radius: 9px; padding: 0 7px; margin-left: 4px; font-weight: 600; letter-spacing: 0; text-transform: none; }
+	.ngps .foot { margin-top: 18px; padding-top: 9px; border-top: 1px solid #efe5dc; font-size: 7.5pt; color: #9a8f87; text-align: center; }
+</style>
+
+<div class="ngps">
+	<!-- Header -->
+	<table>
+		<tr>
+			<td style="width: 74px;">{% if c.logo %}<img class="logo" src="{{ c.logo }}" alt="">{% endif %}</td>
+			<td>
+				<div class="co-name">{{ c.name | upper }}</div>
+				<div class="co-meta">{{ c.address }}</div>
+				<div class="co-meta">{% if c.rc_number %}RC No. {{ c.rc_number }}{% endif %}{% if c.rc_number and c.tax_id %} &nbsp;·&nbsp; {% endif %}{% if c.tax_id %}TIN {{ c.tax_id }}{% endif %}</div>
+			</td>
+			<td style="width: 34%; text-align: right;">
+				<div class="eyebrow">Payslip</div>
+				<div class="period">{{ s.period }}</div>
+				<span class="paid">Paid {{ s.paid_on }}</span>
+			</td>
+		</tr>
+	</table>
+	<div class="stripe"><span></span><i></i></div>
+
+	<!-- Employee -->
+	<div class="card">
+		<table>
+			<tr>
+				<td>
+					<table class="kv">
+						{%- for k, v in s.info_left %}
+						<tr><td class="k">{{ k }}</td><td class="v">{{ v }}</td></tr>
+						{%- endfor %}
+					</table>
+				</td>
+				<td class="gap"></td>
+				<td>
+					<table class="kv">
+						{%- for k, v in s.info_right %}
+						<tr><td class="k">{{ k }}</td><td class="v">{{ v }}</td></tr>
+						{%- endfor %}
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Earnings | Deductions -->
+	<table class="sec">
+		<tr>
+			<td>
+				<div class="box">
+					<table>
+						<tr class="box-title"><td>Earnings</td><td class="num">Amount (₦)</td></tr>
+						{%- for r in s.earnings %}
+						<tr class="line{% if not r.amount %} zero{% endif %}"><td>{{ r.label }}</td><td class="num">{{ ng_money(r.amount) }}</td></tr>
+						{%- endfor %}
+						{%- for i in range(s.deductions|length - s.earnings|length) %}<tr class="line"><td>&nbsp;</td><td></td></tr>{% endfor %}
+						<tr class="total"><td>Gross pay</td><td class="num">{{ ng_money(s.gross, dash=False) }}</td></tr>
+					</table>
+				</div>
+			</td>
+			<td class="gap"></td>
+			<td>
+				<div class="box">
+					<table>
+						<tr class="box-title"><td>Deductions</td><td class="num">Amount (₦)</td></tr>
+						{%- for r in s.deductions %}
+						<tr class="line{% if not r.amount %} zero{% endif %}"><td>{{ r.label }}</td><td class="num">{{ ng_money(r.amount) }}</td></tr>
+						{%- endfor %}
+						{%- for i in range(s.earnings|length - s.deductions|length) %}<tr class="line"><td>&nbsp;</td><td></td></tr>{% endfor %}
+						<tr class="total"><td>Total deductions</td><td class="num">{{ ng_money(s.total_deductions, dash=False) }}</td></tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<!-- Net pay -->
+	<div class="net">
+		<table>
+			<tr>
+				<td>
+					<div class="lbl">Net pay · paid in Naira</div>
+					{% if s.net_in_words %}<div class="sub">{{ s.net_in_words }}</div>{% endif %}
+				</td>
+				<td class="amt" style="width: 45%;">₦{{ ng_money(s.net, dash=False) }}</td>
+			</tr>
+		</table>
+	</div>
+
+	<!-- Employer contributions | Tax memo -->
+	<table class="sec">
+		<tr>
+			<td>
+				<table>
+					<tr class="note-title"><td colspan="2">Employer contributions <span class="chip">not deducted</span></td></tr>
+					{%- for r in s.employer %}
+					<tr class="note"><td>{{ r.label }}</td><td class="num">{{ ng_money(r.amount) }}</td></tr>
+					{%- else %}
+					<tr class="note"><td colspan="2" class="muted">None this period</td></tr>
+					{%- endfor %}
+				</table>
+			</td>
+			<td class="gap"></td>
+			<td>
+				<table>
+					<tr class="note-title"><td colspan="2">Tax computation – monthly <span class="chip">memo</span></td></tr>
+					<tr class="note"><td>Rent relief (monthly)</td><td class="num">{{ ng_money(s.memo.rent_relief) }}</td></tr>
+					<tr class="note"><td>Chargeable income (monthly)</td><td class="num">{{ ng_money(s.memo.chargeable) }}</td></tr>
+					<tr class="note"><td>Effective PAYE rate</td><td class="num">{{ "%.1f"|format(s.memo.effective_rate) }}%</td></tr>
+					<tr class="note"><td class="muted" colspan="2" style="font-size: 7.5pt;">PAYE under the Nigeria Tax Act 2025 (0% – 25% bands), cumulative over the year.</td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<div class="foot">
+		Computer-generated payslip — no signature required. Queries: Finance &amp; HR, {{ c.name }}. Confidential.
+	</div>
+</div>

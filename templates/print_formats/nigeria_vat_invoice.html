@@ -1,0 +1,123 @@
+{%- set v = ng_vat_invoice(doc) -%}
+{%- set c = v.company -%}
+<style>
+	.ngvi { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; color: #2b2622; font-size: 9.5pt; line-height: 1.35; }
+	.ngvi table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+	.ngvi td, .ngvi th { padding: 0; vertical-align: top; }
+	.ngvi .num { text-align: right; white-space: nowrap; }
+	.ngvi .logo { width: 62px; height: 62px; }
+	.ngvi .co-name { font-size: 13pt; font-weight: 700; color: #8b4a35; margin: 2px 0 3px; }
+	.ngvi .co-meta { font-size: 8.5pt; color: #8a7d74; }
+	.ngvi .eyebrow { font-size: 7.5pt; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #8b4a35; }
+	.ngvi .title { font-size: 16pt; font-weight: 700; margin: 2px 0; }
+	.ngvi .stripe { height: 4px; margin: 14px 0 16px; background: #8b4a35; border-radius: 2px; }
+	.ngvi .stripe span { display: block; float: right; height: 4px; width: 70px; background: #e9be4a; }
+	.ngvi .stripe i { display: block; float: right; height: 4px; width: 70px; background: #0f9a52; }
+	.ngvi .card { background: #fbf7f2; border: 1px solid #efe5dc; border-radius: 8px; padding: 10px 14px; }
+	.ngvi .lbl { font-size: 7.5pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8a7d74; margin-bottom: 3px; }
+	.ngvi .kv td { padding: 2px 0; }
+	.ngvi .kv .k { color: #8a7d74; width: 45%; }
+	.ngvi .kv .v { font-weight: 600; }
+	.ngvi .items { margin-top: 16px; }
+	.ngvi .items th { font-size: 7.5pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #8b4a35;
+		text-align: left; padding: 6px 6px; border-bottom: 1.5px solid #2b2622; }
+	.ngvi .items th.num { text-align: right; }
+	.ngvi .items td { padding: 6px; border-bottom: 1px solid #f0e7df; }
+	.ngvi .totals td { padding: 4px 0; }
+	.ngvi .totals .grand td { border-top: 1.5px solid #2b2622; padding-top: 7px; font-weight: 700; font-size: 11pt; }
+	.ngvi .treat { display: inline-block; font-size: 8pt; font-weight: 600; color: #0f7a44; background: #e8f5ee; border-radius: 10px; padding: 2px 9px; }
+	.ngvi .foot { margin-top: 18px; padding-top: 9px; border-top: 1px solid #efe5dc; font-size: 7.5pt; color: #9a8f87; text-align: center; }
+</style>
+
+<div class="ngvi">
+	<table>
+		<tr>
+			<td style="width: 74px;">{% if c.logo %}<img class="logo" src="{{ c.logo }}" alt="">{% endif %}</td>
+			<td>
+				<div class="co-name">{{ c.name | upper }}</div>
+				<div class="co-meta">{{ c.address }}</div>
+				<div class="co-meta">{% if c.rc_number %}RC No. {{ c.rc_number }}{% endif %}{% if c.tax_id %} &nbsp;·&nbsp; Tax ID (TIN) {{ c.tax_id }}{% endif %}</div>
+			</td>
+			<td style="width: 34%; text-align: right;">
+				<div class="eyebrow">{% if doc.is_return %}VAT credit note{% else %}VAT invoice{% endif %}</div>
+				<div class="title">{{ doc.name }}</div>
+				<span class="treat">{{ v.treatment }}</span>
+			</td>
+		</tr>
+	</table>
+	<div class="stripe"><span></span><i></i></div>
+
+	<table>
+		<tr>
+			<td>
+				<div class="card">
+					<div class="lbl">Billed to</div>
+					<div style="font-weight: 700; font-size: 10.5pt;">{{ doc.customer_name }}</div>
+					{% if doc.address_display %}<div class="co-meta">{{ doc.address_display | replace("<br>", ", ") | replace("<br/>", ", ") | striptags | trim(", ") }}</div>{% endif %}
+					{% if v.customer_tin %}<div class="co-meta">Tax ID: {{ v.customer_tin }}</div>{% endif %}
+				</div>
+			</td>
+			<td style="width: 4%;"></td>
+			<td>
+				<div class="card">
+					<table class="kv">
+						<tr><td class="k">Invoice no.</td><td class="v">{{ doc.name }}</td></tr>
+						<tr><td class="k">Date of supply</td><td class="v">{{ frappe.utils.formatdate(doc.posting_date, "dd-MMM-yyyy") }}</td></tr>
+						{% if doc.due_date %}<tr><td class="k">Due date</td><td class="v">{{ frappe.utils.formatdate(doc.due_date, "dd-MMM-yyyy") }}</td></tr>{% endif %}
+						{% if doc.po_no %}<tr><td class="k">Customer PO</td><td class="v">{{ doc.po_no }}</td></tr>{% endif %}
+						<tr><td class="k">Currency</td><td class="v">{{ doc.currency }}{% if doc.currency != "NGN" and doc.conversion_rate %} (₦{{ "{:,.2f}".format(doc.conversion_rate) }}){% endif %}</td></tr>
+						{% if doc.get("ng_nrs_irn") %}<tr><td class="k">NRS IRN</td><td class="v">{{ doc.ng_nrs_irn }}</td></tr>{% endif %}
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<table class="items">
+		<thead>
+			<tr>
+				<th style="width: 5%;">#</th>
+				<th>Description</th>
+				<th class="num" style="width: 12%;">Qty</th>
+				<th class="num" style="width: 17%;">Rate</th>
+				<th class="num" style="width: 19%;">Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+			{%- for it in doc.items %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td><b>{{ it.item_name }}</b>{% if it.description and it.description|striptags != it.item_name %}<div class="co-meta">{{ it.description | striptags | truncate(140) }}</div>{% endif %}</td>
+				<td class="num">{{ "{:,.3f}".format(it.qty).rstrip("0").rstrip(".") }} {{ it.uom or "" }}</td>
+				<td class="num">{{ ng_money(it.net_rate or it.rate, dash=False) }}</td>
+				<td class="num">{{ ng_money(it.net_amount or it.amount, dash=False) }}</td>
+			</tr>
+			{%- endfor %}
+		</tbody>
+	</table>
+
+	<table style="margin-top: 12px;">
+		<tr>
+			<td>
+				{% if doc.in_words %}<div class="lbl">Amount in words</div><div>{{ doc.in_words }}</div>{% endif %}
+			</td>
+			<td style="width: 4%;"></td>
+			<td style="width: 42%;">
+				<table class="totals">
+					<tr><td>Value of supply (net)</td><td class="num">{{ doc.currency }} {{ ng_money(doc.net_total, dash=False) }}</td></tr>
+					<tr><td>VAT{% if v.rates %} @ {{ v.rates | map("string") | join(", ") }}%{% endif %}</td><td class="num">{{ doc.currency }} {{ ng_money(v.vat, dash=False) }}</td></tr>
+					{%- for t in doc.taxes if "VAT" not in (t.description or "") and "VAT" not in (t.account_head or "") %}
+					<tr><td>{{ t.description }}</td><td class="num">{{ doc.currency }} {{ ng_money(t.tax_amount_after_discount_amount, dash=False) }}</td></tr>
+					{%- endfor %}
+					{% if doc.discount_amount %}<tr><td>Discount</td><td class="num">-{{ doc.currency }} {{ ng_money(doc.discount_amount, dash=False) }}</td></tr>{% endif %}
+					<tr class="grand"><td>Gross amount</td><td class="num">{{ doc.currency }} {{ ng_money(doc.grand_total, dash=False) }}</td></tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	<div class="foot">
+		VAT invoice issued under the Nigeria Tax Act 2025. Supplier TIN {{ c.tax_id or "-" }}{% if c.rc_number %} · RC {{ c.rc_number }}{% endif %}.
+		{% if "Zero-rated" in v.treatment %} Exported goods and services are zero-rated.{% endif %}
+	</div>
+</div>

@@ -1,0 +1,56 @@
+{
+ "company_details": {
+  "registered_address": "20 Idowu Martins Street, Off Adeola Odeku, Victoria Island, Lagos, Nigeria",
+  "rc_number": "9602782",
+  "tax_id": "2622428956626"
+ },
+ "payroll_parameters": {
+  "_source": "FEDCO payroll parameter sheet, sections C & D",
+  "rent_relief_rate": 0.2,
+  "rent_relief_cap": 500000,
+  "employee_pension_rate": 0.08,
+  "nhf_rate": 0.025,
+  "minimum_wage_monthly": 70000,
+  "employer_pension_rate": 0.1,
+  "nsitf_rate": 0.01,
+  "itf_rate": 0.01,
+  "itf_applicable": true,
+  "hmo_premium_monthly": 1250,
+  "group_life_rate_of_annual_emoluments": 0.0
+ },
+ "accounts": {
+  "_note": "Account numbers from data/fedco_coa.json",
+  "staff_costs": "60001",
+  "salary_control": "20004",
+  "paye_payable": "20011",
+  "wht_payable": "20012",
+  "vat_output": "20013",
+  "pension_payable": "20014",
+  "nhf_payable": "20015",
+  "nsitf_payable": "20016",
+  "itf_payable": "20017",
+  "cit_payable": "20019",
+  "hmo_payable": "20008",
+  "staff_loans": "10023",
+  "vat_input_local": "10022",
+  "vat_input_import": "10021",
+  "company_defaults": {
+   "default_receivable_account": "10025",
+   "default_payable_account": "20003",
+   "default_payroll_payable_account": "20004",
+   "default_cash_account": "10001",
+   "default_bank_account": "10002",
+   "default_income_account": "40001",
+   "default_expense_account": "60010",
+   "default_inventory_account": "10010",
+   "stock_received_but_not_billed": "20006",
+   "stock_adjustment_account": "50032",
+   "round_off_account": "60010",
+   "write_off_account": "60010",
+   "exchange_gain_loss_account": "70006",
+   "unrealized_exchange_gain_loss_account": "70007",
+   "accumulated_depreciation_account": "11055",
+   "depreciation_expense_account": "60008"
+  }
+ }
+}

@@ -1,0 +1,1075 @@
+{
+ "roots": {
+  "Asset": "Assets",
+  "Liability": "Liabilities",
+  "Equity": "Equity",
+  "Income": "Income",
+  "Expense": "Expenses"
+ },
+ "headlines": [
+  {
+   "code": "H01",
+   "name": "Property, Plant & Equipment",
+   "root_type": "Asset",
+   "account_type": ""
+  },
+  {
+   "code": "H02",
+   "name": "Stocks",
+   "root_type": "Asset",
+   "account_type": "Stock"
+  },
+  {
+   "code": "H03",
+   "name": "Accounts Receivable & Prepayments",
+   "root_type": "Asset",
+   "account_type": ""
+  },
+  {
+   "code": "H04",
+   "name": "Cash at Bank & In Hand",
+   "root_type": "Asset",
+   "account_type": ""
+  },
+  {
+   "code": "H05",
+   "name": "Accounts Payable",
+   "root_type": "Liability",
+   "account_type": ""
+  },
+  {
+   "code": "H06",
+   "name": "Short-Term Loan",
+   "root_type": "Liability",
+   "account_type": ""
+  },
+  {
+   "code": "H07",
+   "name": "Medium Term Loan",
+   "root_type": "Liability",
+   "account_type": ""
+  },
+  {
+   "code": "H08",
+   "name": "Taxation Payable",
+   "root_type": "Liability",
+   "account_type": ""
+  },
+  {
+   "code": "H09",
+   "name": "Deferred Tax",
+   "root_type": "Liability",
+   "account_type": ""
+  },
+  {
+   "code": "H10",
+   "name": "Stated Capital",
+   "root_type": "Equity",
+   "account_type": ""
+  },
+  {
+   "code": "H11",
+   "name": "Capital Surplus",
+   "root_type": "Equity",
+   "account_type": ""
+  },
+  {
+   "code": "H12",
+   "name": "Income Surplus",
+   "root_type": "Equity",
+   "account_type": ""
+  },
+  {
+   "code": "H13",
+   "name": "Turnover",
+   "root_type": "Income",
+   "account_type": ""
+  },
+  {
+   "code": "H14",
+   "name": "Other Income",
+   "root_type": "Income",
+   "account_type": ""
+  },
+  {
+   "code": "H15",
+   "name": "Cost of Sales",
+   "root_type": "Expense",
+   "account_type": ""
+  },
+  {
+   "code": "H16",
+   "name": "Administration & General Expenses",
+   "root_type": "Expense",
+   "account_type": ""
+  },
+  {
+   "code": "H17",
+   "name": "Direct Finance Cost",
+   "root_type": "Expense",
+   "account_type": ""
+  },
+  {
+   "code": "H18",
+   "name": "Taxation",
+   "root_type": "Expense",
+   "account_type": ""
+  },
+  {
+   "code": "H19",
+   "name": "Right-of-Use Assets",
+   "root_type": "Asset",
+   "account_type": ""
+  },
+  {
+   "code": "H20",
+   "name": "Lease Liabilities",
+   "root_type": "Liability",
+   "account_type": ""
+  },
+  {
+   "code": "H21",
+   "name": "Derivative Financial Assets",
+   "root_type": "Asset",
+   "account_type": ""
+  },
+  {
+   "code": "H22",
+   "name": "Derivative Financial Liabilities",
+   "root_type": "Liability",
+   "account_type": ""
+  },
+  {
+   "code": "H23",
+   "name": "Cash Flow Hedge Reserve",
+   "root_type": "Equity",
+   "account_type": ""
+  },
+  {
+   "code": "H24",
+   "name": "Net Hedging & FX Forward Gains/(Losses)",
+   "root_type": "Income",
+   "account_type": ""
+  }
+ ],
+ "accounts": [
+  {
+   "code": "11001",
+   "name": "PPE Cost - Gratings",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Fixed Asset",
+   "currency": ""
+  },
+  {
+   "code": "11002",
+   "name": "PPE Cost - Scales",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Fixed Asset",
+   "currency": ""
+  },
+  {
+   "code": "11003",
+   "name": "PPE Cost - Tarpaulins",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Fixed Asset",
+   "currency": ""
+  },
+  {
+   "code": "11004",
+   "name": "PPE Cost - Depot Buildings",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Fixed Asset",
+   "currency": ""
+  },
+  {
+   "code": "11005",
+   "name": "PPE Cost - Motor Vehicles",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Fixed Asset",
+   "currency": ""
+  },
+  {
+   "code": "11006",
+   "name": "PPE Cost - Office Furniture & Equipment",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Fixed Asset",
+   "currency": ""
+  },
+  {
+   "code": "11051",
+   "name": "Acc. Depreciation - Gratings",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Accumulated Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "11052",
+   "name": "Acc. Depreciation - Scales",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Accumulated Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "11053",
+   "name": "Acc. Depreciation - Tarpaulins",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Accumulated Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "11054",
+   "name": "Acc. Depreciation - Depot Buildings",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Accumulated Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "11055",
+   "name": "Acc. Depreciation - Motor Vehicles",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Accumulated Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "11056",
+   "name": "Acc. Depreciation - Office Furniture & Equipment",
+   "headline": "H01",
+   "root_type": "Asset",
+   "account_type": "Accumulated Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "10010",
+   "name": "Produce Inventory (Cocoa Stock)",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "Stock",
+   "currency": ""
+  },
+  {
+   "code": "10011",
+   "name": "Beans in Transit",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "Stock",
+   "currency": ""
+  },
+  {
+   "code": "10012",
+   "name": "Provision for Inventory Write-down",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "10013",
+   "name": "Capitalised Purchase Costs – Freight, Handling, Levies & Commissions",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "10014",
+   "name": "Goods in Transit – Depot to Port",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "Stock",
+   "currency": ""
+  },
+  {
+   "code": "10015",
+   "name": "Goods at Port / Bonded Warehouse Awaiting Shipment",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "Stock",
+   "currency": ""
+  },
+  {
+   "code": "10016",
+   "name": "Goods Shipped – At Sea (Control Not Yet Transferred)",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "Stock",
+   "currency": ""
+  },
+  {
+   "code": "10017",
+   "name": "Packaging & Consumables Inventory",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "Stock",
+   "currency": ""
+  },
+  {
+   "code": "10018",
+   "name": "Provision – Quality & Weight Loss (Contra)",
+   "headline": "H02",
+   "root_type": "Asset",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "10020",
+   "name": "Other Receivables & Prepayments",
+   "headline": "H03",
+   "root_type": "Asset",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "10021",
+   "name": "Import VAT Recoverable",
+   "headline": "H03",
+   "root_type": "Asset",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "10022",
+   "name": "Export VAT Recoverable",
+   "headline": "H03",
+   "root_type": "Asset",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "10023",
+   "name": "Staff Loans",
+   "headline": "H03",
+   "root_type": "Asset",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "10024",
+   "name": "Advances to Suppliers/Farmers",
+   "headline": "H03",
+   "root_type": "Asset",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "10025",
+   "name": "Trade Receivables",
+   "headline": "H03",
+   "root_type": "Asset",
+   "account_type": "Receivable",
+   "currency": ""
+  },
+  {
+   "code": "10026",
+   "name": "Trade Receivables – Export Customers (FX)",
+   "headline": "H03",
+   "root_type": "Asset",
+   "account_type": "Receivable",
+   "currency": "USD"
+  },
+  {
+   "code": "10001",
+   "name": "Cash",
+   "headline": "H04",
+   "root_type": "Asset",
+   "account_type": "Cash",
+   "currency": ""
+  },
+  {
+   "code": "10002",
+   "name": "Bank - Naira",
+   "headline": "H04",
+   "root_type": "Asset",
+   "account_type": "Bank",
+   "currency": ""
+  },
+  {
+   "code": "10003",
+   "name": "Petty Cash - Head Office",
+   "headline": "H04",
+   "root_type": "Asset",
+   "account_type": "Cash",
+   "currency": ""
+  },
+  {
+   "code": "10004",
+   "name": "Petty Cash - Akure",
+   "headline": "H04",
+   "root_type": "Asset",
+   "account_type": "Cash",
+   "currency": ""
+  },
+  {
+   "code": "10005",
+   "name": "Bank - USD",
+   "headline": "H04",
+   "root_type": "Asset",
+   "account_type": "Bank",
+   "currency": "USD"
+  },
+  {
+   "code": "20001",
+   "name": "Accounts Payable - Farmers/Agents",
+   "headline": "H05",
+   "root_type": "Liability",
+   "account_type": "Payable",
+   "currency": ""
+  },
+  {
+   "code": "20002",
+   "name": "Accrued Expenses",
+   "headline": "H05",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "20003",
+   "name": "Trade Payables",
+   "headline": "H05",
+   "root_type": "Liability",
+   "account_type": "Payable",
+   "currency": ""
+  },
+  {
+   "code": "20004",
+   "name": "Salary Control Account",
+   "headline": "H05",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "20005",
+   "name": "Foreign Currency Trade Liability",
+   "headline": "H05",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": "USD"
+  },
+  {
+   "code": "20006",
+   "name": "Goods Received Not Invoiced (GRNI)",
+   "headline": "H05",
+   "root_type": "Liability",
+   "account_type": "Stock Received But Not Billed",
+   "currency": ""
+  },
+  {
+   "code": "20007",
+   "name": "Customer Advances / Contract Liabilities",
+   "headline": "H05",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "20008",
+   "name": "HMO & Group Life Premiums Payable",
+   "headline": "H05",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "20101",
+   "name": "Short-Term Loan",
+   "headline": "H06",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "20102",
+   "name": "Bank Overdraft",
+   "headline": "H06",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "20201",
+   "name": "Medium Term Loan",
+   "headline": "H07",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "20011",
+   "name": "Statutory Payables - PAYE",
+   "headline": "H08",
+   "root_type": "Liability",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "20012",
+   "name": "Statutory Payables - WHT",
+   "headline": "H08",
+   "root_type": "Liability",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "20013",
+   "name": "Statutory Payables - VAT/Levies",
+   "headline": "H08",
+   "root_type": "Liability",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "20014",
+   "name": "Statutory Payables - Pension",
+   "headline": "H08",
+   "root_type": "Liability",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "20015",
+   "name": "Statutory Payables - NHF",
+   "headline": "H08",
+   "root_type": "Liability",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "20016",
+   "name": "Statutory Payables - NSITF",
+   "headline": "H08",
+   "root_type": "Liability",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "20017",
+   "name": "Statutory Payables - ITF",
+   "headline": "H08",
+   "root_type": "Liability",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "20019",
+   "name": "Statutory Payables - CIT & Development Levy",
+   "headline": "H08",
+   "root_type": "Liability",
+   "account_type": "Tax",
+   "currency": ""
+  },
+  {
+   "code": "20301",
+   "name": "Deferred Tax",
+   "headline": "H09",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "30001",
+   "name": "Stated Capital",
+   "headline": "H10",
+   "root_type": "Equity",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "30002",
+   "name": "Capital Surplus",
+   "headline": "H11",
+   "root_type": "Equity",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "30003",
+   "name": "Income Surplus",
+   "headline": "H12",
+   "root_type": "Equity",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "40001",
+   "name": "Produce Sales / Export Revenue",
+   "headline": "H13",
+   "root_type": "Income",
+   "account_type": "Income Account",
+   "currency": ""
+  },
+  {
+   "code": "40002",
+   "name": "Export Sales – FOB",
+   "headline": "H13",
+   "root_type": "Income",
+   "account_type": "Income Account",
+   "currency": ""
+  },
+  {
+   "code": "40003",
+   "name": "Export Sales – CIF",
+   "headline": "H13",
+   "root_type": "Income",
+   "account_type": "Income Account",
+   "currency": ""
+  },
+  {
+   "code": "40004",
+   "name": "Sales Returns (Contra)",
+   "headline": "H13",
+   "root_type": "Income",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "40005",
+   "name": "Quality & Weight Claims / Allowances (Contra)",
+   "headline": "H13",
+   "root_type": "Income",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "40101",
+   "name": "Other Income",
+   "headline": "H14",
+   "root_type": "Income",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "40102",
+   "name": "Interest Income",
+   "headline": "H14",
+   "root_type": "Income",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "40105",
+   "name": "Recoveries on Stock Loss / Damage",
+   "headline": "H14",
+   "root_type": "Income",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50001",
+   "name": "Cost of Sales – Produce Issued at Weighted Average Cost",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "Cost of Goods Sold",
+   "currency": ""
+  },
+  {
+   "code": "50002",
+   "name": "Depot Operating Costs",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50003",
+   "name": "Bagging & Transport",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50004",
+   "name": "Weighbridge / Grading Costs",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50011",
+   "name": "Depreciation Charge - Gratings",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "50012",
+   "name": "Depreciation Charge - Scales",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "50013",
+   "name": "Depreciation Charge - Tarpaulins",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "50014",
+   "name": "Depreciation Charge - Depot Buildings",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "50021",
+   "name": "Freight Cost",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50022",
+   "name": "Other Export Costs",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50023",
+   "name": "Customs Duties",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50024",
+   "name": "Brokerage Fees",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50025",
+   "name": "Inventory Write-down",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50027",
+   "name": "Freight Forwarding & Clearing Agent Fees",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50028",
+   "name": "Port & Terminal Handling Charges",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50029",
+   "name": "Marine & Stock Insurance",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50030",
+   "name": "Weight Loss / Moisture Shrinkage – Normal",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50031",
+   "name": "Abnormal Wastage, Spoilage & Infestation Losses",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "50032",
+   "name": "Stock Count Variances – Loss / (Gain)",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "Stock Adjustment",
+   "currency": ""
+  },
+  {
+   "code": "50033",
+   "name": "Theft & Loss of Stock",
+   "headline": "H15",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60001",
+   "name": "Staff Costs",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60002",
+   "name": "Utilities",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60003",
+   "name": "Travel & Transport",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60004",
+   "name": "Professional Fees",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60005",
+   "name": "Printing & Stationery",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60006",
+   "name": "Insurance",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60007",
+   "name": "Repairs & Maintenance",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60008",
+   "name": "Depreciation - Motor Vehicles",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "60009",
+   "name": "Depreciation - Office Furniture & Equipment",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "60010",
+   "name": "Miscellaneous / Sundry Admin Expenses",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "Round Off",
+   "currency": ""
+  },
+  {
+   "code": "60011",
+   "name": "Depreciation - Right-of-Use Asset",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "60012",
+   "name": "Lease Expenses (Short-term/Low-value)",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "60013",
+   "name": "Rent",
+   "headline": "H16",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "70001",
+   "name": "Bank Charges",
+   "headline": "H17",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "70002",
+   "name": "Interest Expense",
+   "headline": "H17",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "70003",
+   "name": "FX Losses / (Gains)",
+   "headline": "H17",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "70004",
+   "name": "Letter of Credit Charges (Issuance, Confirmation & Negotiation)",
+   "headline": "H17",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "70005",
+   "name": "Documentary Collection & Export Bank Charges",
+   "headline": "H17",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "70006",
+   "name": "Realised FX Loss / (Gain) – Trade Settlements",
+   "headline": "H17",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "70007",
+   "name": "Unrealised FX Loss / (Gain) – Trade Balances Revaluation",
+   "headline": "H17",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "80001",
+   "name": "Taxation",
+   "headline": "H18",
+   "root_type": "Expense",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "12001",
+   "name": "Right-of-Use Asset",
+   "headline": "H19",
+   "root_type": "Asset",
+   "account_type": "Fixed Asset",
+   "currency": ""
+  },
+  {
+   "code": "12051",
+   "name": "Acc. Depreciation - Right-of-Use Asset",
+   "headline": "H19",
+   "root_type": "Asset",
+   "account_type": "Accumulated Depreciation",
+   "currency": ""
+  },
+  {
+   "code": "20401",
+   "name": "Lease Liability",
+   "headline": "H20",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "13001",
+   "name": "Derivative Asset",
+   "headline": "H21",
+   "root_type": "Asset",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "20501",
+   "name": "Derivative Liability",
+   "headline": "H22",
+   "root_type": "Liability",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "30004",
+   "name": "Cash Flow Hedge Reserve",
+   "headline": "H23",
+   "root_type": "Equity",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "40103",
+   "name": "Hedge Gain / (Loss)",
+   "headline": "H24",
+   "root_type": "Income",
+   "account_type": "",
+   "currency": ""
+  },
+  {
+   "code": "40104",
+   "name": "FX Forward Gain / (Loss)",
+   "headline": "H24",
+   "root_type": "Income",
+   "account_type": "",
+   "currency": ""
+  }
+ ],
+ "notes": [
+  "Recoded 'Bank - USD' 10002 -> 10005 (code 10002 was used twice)",
+  "50004 'Weighbridge / Grading Costs': headline name 'Administration & General Expenses' differs from H15 'Cost of Sales'; kept under H15 (code wins)",
+  "50011 'Depreciation Charge - Gratings': headline name 'Administration & General Expenses' differs from H15 'Cost of Sales'; kept under H15 (code wins)",
+  "50012 'Depreciation Charge - Scales': headline name 'Administration & General Expenses' differs from H15 'Cost of Sales'; kept under H15 (code wins)",
+  "50013 'Depreciation Charge - Tarpaulins': headline name 'Administration & General Expenses' differs from H15 'Cost of Sales'; kept under H15 (code wins)",
+  "50014 'Depreciation Charge - Depot Buildings': headline name 'Administration & General Expenses' differs from H15 'Cost of Sales'; kept under H15 (code wins)",
+  "Added 20008 'HMO & Group Life Premiums Payable' under H05",
+  "Added 20014 'Statutory Payables - Pension' under H08",
+  "Added 20015 'Statutory Payables - NHF' under H08",
+  "Added 20016 'Statutory Payables - NSITF' under H08",
+  "Added 20017 'Statutory Payables - ITF' under H08",
+  "Added 20019 'Statutory Payables - CIT & Development Levy' under H08"
+ ]
+}
